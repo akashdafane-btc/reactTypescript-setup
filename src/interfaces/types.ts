@@ -1,10 +1,23 @@
-export type ButtonProps = {
+import React, { ReactNode } from 'react';
+import { ButtonVariant } from 'react-bootstrap/esm/types';
+export interface ButtonProps  {
+  // label?: Function | string;
+  // isLoading?: boolean;
+  // onClick: () => void;
+  // variant?: string;
+  // prependIcon?: boolean;
+  // iconClass?: string;
+  // disabled?: boolean;
+  // className?: string,
   label?: string;
+  disabled?: boolean;
   isLoading?: boolean;
-  handleClick: Function;
+  onClick?: () => void;
+  className?: string;
+  type?: 'button' | 'reset' | 'submit';
   variant?: string;
-  prependIcon?: boolean;
   iconClass?: string;
+  prependIcon?: boolean;
 };
 
 
@@ -79,4 +92,55 @@ export type selectDropdown = {
   closeMenuOnSelect?: boolean;
   isRequired?: boolean;
   inputRef?: any;
+};
+
+
+//  type ModalButton ={
+//   isDisabled?: boolean;
+//   isLoading?: boolean;
+//   label?: string;
+//   className?: string;
+//   onClick?: () => void;
+//   variant?: string;
+// }
+
+// export type ModalProps = {
+//   children?: ReactNode;
+//   title?: string;
+//   isModalVisible?: boolean;
+//   toggleModal?: () => void;
+//   buttons?: ModalButton[];
+//   modalClass?: string;
+// }
+
+
+export type DialogTitleProps = {
+  id: string;
+  children?: React.ReactNode;
+  onClose?: () => void;
+}
+
+export type CustomModalProps = {
+  buttons?: any;
+  children?: React.ReactNode;
+}
+
+export type CustomButtonProps = {
+  label?: string;
+  onClick?: () => void;
+  type?: 'button' | 'submit' | 'reset';
+  disabled?: boolean;
+  variant?: 'contained' | 'outlined' | 'text';
+  size?: 'small' | 'medium' | 'large';
+  isLoading?: boolean;
+  startIcon?: React.ReactNode;
+  endIcon?: React.ReactNode;
+  color?:
+    | 'inherit'
+    | 'primary'
+    | 'secondary'
+    | 'success'
+    | 'error'
+    | 'info'
+    | 'warning';
 };
