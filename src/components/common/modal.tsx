@@ -1,5 +1,4 @@
 import * as React from 'react';
-// import Button from '@mui/material/Button';
 import { styled } from '@mui/material/styles';
 import Dialog from '@mui/material/Dialog';
 import DialogTitle from '@mui/material/DialogTitle';
@@ -43,7 +42,11 @@ const BootstrapDialogTitle = (props: DialogTitleProps) => {
   );
 };
 
-const CustomModal: React.FC<CustomModalProps> = ({ children, buttons }) => {
+const CustomModal: React.FC<CustomModalProps> = ({
+  children,
+  buttons,
+  title,
+}) => {
   const [open, setOpen] = React.useState(false);
 
   const handleClickOpen = () => {
@@ -60,7 +63,6 @@ const CustomModal: React.FC<CustomModalProps> = ({ children, buttons }) => {
         label="Open dialog"
         onClick={handleClickOpen}
       />
-
       <BootstrapDialog
         onClose={handleClose}
         aria-labelledby="customized-dialog-title"
@@ -68,18 +70,12 @@ const CustomModal: React.FC<CustomModalProps> = ({ children, buttons }) => {
         <BootstrapDialogTitle
           id="customized-dialog-title"
           onClose={handleClose}>
-          Modal title
+          {title}
         </BootstrapDialogTitle>
         <DialogContent dividers>
-          <Typography gutterBottom>
-            Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-            dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta
-            ac consectetur ac, vestibulum at eros.
-          </Typography>
           <Typography gutterBottom>{children}</Typography>
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose} label="Save changes" />
           {buttons &&
             buttons.map((btn: any) => {
               return (
@@ -88,7 +84,7 @@ const CustomModal: React.FC<CustomModalProps> = ({ children, buttons }) => {
                   isLoading={btn.isLoading}
                   label={btn.label}
                   onClick={btn.onClick}
-                  variant={btn.variant || 'primary'}
+                  color={btn.color || 'primary'}
                 />
               );
             })}

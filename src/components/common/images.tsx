@@ -6,7 +6,7 @@ const ImageComponent: React.FC<Images> = ({
   className,
   height,
   id,
-  onClick = () => {},
+  onClick,
   src,
   srcSet,
   title,
@@ -18,7 +18,7 @@ const ImageComponent: React.FC<Images> = ({
       className={className}
       height={height}
       id={id}
-      onClick={() => onClick()}
+      onClick={onClick}
       srcSet={srcSet}
       title={title}
       width={width}

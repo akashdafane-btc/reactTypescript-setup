@@ -1,6 +1,5 @@
 import React from 'react';
 import Button from '@mui/material/Button';
-import CircularProgress from '@mui/material/CircularProgress';
 import { CustomButtonProps } from '../../interfaces/types';
 import { Loader } from '..';
 
@@ -15,21 +14,25 @@ const CustomButton: React.FC<CustomButtonProps> = ({
   startIcon,
   endIcon,
   color,
+  withStartSvg,
+  withEndSvg,
+  customClasssName,
 }) => {
   return (
     <Button
       onClick={onClick}
       variant={variant || 'contained'}
       color={color}
+      className={customClasssName}
       size={size}
       type={type}
-      startIcon={startIcon}
-      endIcon={endIcon}
+      startIcon={withStartSvg || startIcon}
+      endIcon={withEndSvg || endIcon}
       disabled={disabled}>
       {isLoading ? (
         <>
-          <Loader />
-          <span>Loading...</span>
+          <Loader  />
+          <span className={customClasssName}>Loading...</span>
         </>
       ) : (
         <></>

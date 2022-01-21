@@ -48,5 +48,5 @@ const DataTable: React.FC = () => {
       />
     </div>
   );
-}
-export default DataTable
+};
+export default DataTable;

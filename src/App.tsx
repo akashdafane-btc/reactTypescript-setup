@@ -13,8 +13,12 @@ import {
 } from './components/index';
 import InputAdornment from '@mui/material/InputAdornment';
 import { IconButton } from '@mui/material';
-import Visibility from '@mui/icons-material/Visibility';
 import { VisibilityOff } from '@mui/icons-material';
+import ButtonDashboard from './pages/buttonPages';
+import ModalDashboard from './pages/modalDashboard';
+import CheckBoxDashboard from './pages/checkBoxDashboard';
+import FullScreenLoader from './components/common/fullScreenLoader';
+
 
 function App() {
   const [isModalVisible, setModalVisible] = useState(false);
@@ -25,52 +29,62 @@ function App() {
     setModalVisible(!isModalVisible);
   };
 
-  const modalFooterButtons = [
-    {
-      label: 'cancel',
-      className: 'cancel-btn',
-      isLoading: false,
-      isDisabled: false,
-      onClick: toggleModal,
-      variant: 'secondary',
-    },
-    {
-      label: 'delete',
-      className: 'delete-btn',
-      isLoading: false,
-      // isDisabled: isLoading,
-      // onClick: onDelete,
-      variant: 'danger',
-    },
-  ];
+  // const modalFooterButtons = [
+  //   {
+  //     label: 'cancel',
+  //     className: 'cancel-btn',
+  //     isLoading: false,
+  //     isDisabled: false,
+  //     onClick: toggleModal,
+  //     variant: 'secondary',
+  //   },
+  //   {
+  //     label: 'delete',
+  //     className: 'delete-btn',
+  //     isLoading: false,
+  //     isDisabled: isLoading,
+  //     onClick: onDelete,
+  //     variant: 'danger',
+  //   },
+  // ];
 
   return (
     <div className="App">
+
+        <ButtonDashboard />
+
+        {/* <Checkbox  
+        color='success' 
+        onChange={(e) => console.log(e.target.checked)} 
+        label='panCard'
+        /> */}
+
+        {/* <CheckBoxDashboard />
+
+        <FullScreenLoader color='success' /> */}
+
+        {/* <ModalDashboard /> */}
+      
       {/* <Button
-        label="hi there"
-        variant={'secondary'}
-        onClick={() => alert('hi there')}
-      />
-      <Button
         label="toggle"
         variant={'secondary'}
         isLoading
         onClick={() => setModalVisible(!isModalVisible)}
       /> */}
-      <Button label="testing" variant="contained" />
+      {/* <Button label="testing" variant="contained" /> */}
 
-      <Modal>
+      {/* <Modal>
         <h1>Children</h1>
-      </Modal>
+      </Modal> */}
 
       {/* <Table /> */}
 
-      <Checkbox value="a" onClick={() => console.log('click')} />
+      {/* <Checkbox value="a" onClick={() => console.log('click')} />
       <Dropdown />
-      <Icons width="500" height="500" text="yep..." src="/Freesample.svg" />
+      <Icons width="500" height="500" text="yep..." src="/Freesample.svg" /> */}
       {/* <input type='text' onChange={(e)=> setData(e.target.value)} /> */}
 
-      <Input
+      {/* <Input
         label="Enter Email"
         placeholder="email"
         type={isModalVisible ? 'text' : 'password'}
@@ -85,13 +99,7 @@ function App() {
             </InputAdornment>
           ),
         }}
-      />
-
-      <br></br>
-
-      <RadioButton value='male' label='Male' />
-      <RadioButton value='female' label='Female' />
-      {/* <RadioButton  value='female' radioLabel='Female' /> */}
+      /> */}
     </div>
   );
 }

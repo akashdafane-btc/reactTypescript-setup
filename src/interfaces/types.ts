@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
 import { ButtonVariant } from 'react-bootstrap/esm/types';
-export interface ButtonProps  {
+export interface ButtonProps {
   // label?: Function | string;
   // isLoading?: boolean;
   // onClick: () => void;
@@ -18,8 +18,7 @@ export interface ButtonProps  {
   variant?: string;
   iconClass?: string;
   prependIcon?: boolean;
-};
-
+}
 
 export type InputProps = {
   type?: string;
@@ -61,7 +60,7 @@ export type Images = {
   height?: string;
   width?: string;
   alt?: string;
-  onClick?: Function;
+  onClick?: () => void;
   title?: string;
   className?: string;
   id?: string;
@@ -94,7 +93,6 @@ export type selectDropdown = {
   inputRef?: any;
 };
 
-
 //  type ModalButton ={
 //   isDisabled?: boolean;
 //   isLoading?: boolean;
@@ -113,17 +111,17 @@ export type selectDropdown = {
 //   modalClass?: string;
 // }
 
-
 export type DialogTitleProps = {
   id: string;
   children?: React.ReactNode;
   onClose?: () => void;
-}
+};
 
 export type CustomModalProps = {
   buttons?: any;
   children?: React.ReactNode;
-}
+  title?: string;
+};
 
 export type CustomButtonProps = {
   label?: string;
@@ -135,6 +133,9 @@ export type CustomButtonProps = {
   isLoading?: boolean;
   startIcon?: React.ReactNode;
   endIcon?: React.ReactNode;
+  withStartSvg?: any;
+  withEndSvg?: any;
+  customClasssName?: any;
   color?:
     | 'inherit'
     | 'primary'
@@ -142,5 +143,81 @@ export type CustomButtonProps = {
     | 'success'
     | 'error'
     | 'info'
+    | 'warning';
+};
+
+export type CheckboxProps = {
+  checked?: boolean;
+  checkedIcon?: React.ReactNode;
+  color?:
+    | 'default'
+    | 'primary'
+    | 'secondary'
+    | 'error'
+    | 'info'
+    | 'success'
+    | 'warning';
+  defaultChecked?: boolean;
+  disabled?: boolean;
+  id?: string;
+  inputProps?: object;
+  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  required?: boolean;
+  size?: 'medium' | 'small';
+  value?: any;
+  inputRef?: any;
+  label?: any;
+};
+
+export type FullScreenLoaderProps = {
+  open?: boolean;
+  invisible?: boolean;
+  transitionDuration?:
+    | number
+    | { appear?: number; enter?: number; exit?: number };
+  color?:
+    | 'inherit'
+    | 'primary'
+    | 'secondary'
+    | 'error'
+    | 'info'
+    | 'success'
+    | 'warning';
+};
+
+export type CustomInputProps = {
+  label?: string;
+  placeholder?: string;
+  id?: string;
+  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  autoComplete?: string;
+  autoFocus?: boolean;
+  color?: 'primary' | 'secondary' | 'error' | 'info' | 'success' | 'warning';
+  defaultValue?: any;
+  disabled?: boolean;
+  type?: string;
+  value?: any;
+  variant?: 'filled' | 'outlined' | 'standard';
+  name?: string;
+  required?: boolean;
+  inputProps?: object;
+  isControlled?: boolean;
+};
+
+export type CustomLoaderProps = {
+  classes?: object;
+  disableShrink?: boolean;
+  size?: number | string;
+  sx?: Array<Function | object | boolean> | Function | object;
+  thickness?: number;
+  value?: number;
+  variant?: 'determinate' | 'indeterminate';
+  color?:
+    | 'inherit'
+    | 'primary'
+    | 'secondary'
+    | 'error'
+    | 'info'
+    | 'success'
     | 'warning';
 };
