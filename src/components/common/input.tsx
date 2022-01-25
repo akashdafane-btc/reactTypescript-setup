@@ -4,7 +4,6 @@ import { TextField } from '@mui/material';
 import Input from '@mui/material/Input';
 // import { CustomInputProps } from '../../interfaces/types';
 
-
 export type CustomInputProps = {
   label?: string;
   placeholder?: string;
@@ -22,9 +21,15 @@ export type CustomInputProps = {
   required?: boolean;
   inputProps?: object;
   isControlled?: boolean;
-  accept?: any;
   registeredEvents?: any;
-}
+  multiLine?: boolean;
+  rows?: number | string;
+  maxRows?: number | string;
+  minRows?: number | string;
+  error?: any;
+  showError?: boolean;
+  helperText?: React.ReactNode;
+};
 
 const CustomInput: React.FC<CustomInputProps> = ({
   label,
@@ -43,14 +48,55 @@ const CustomInput: React.FC<CustomInputProps> = ({
   required,
   inputProps,
   isControlled,
-  accept,
   registeredEvents,
+  multiLine,
+  rows,
+  maxRows,
+  minRows,
+  helperText,
+  error,
+  showError,
 }) => {
   return (
     <FormControl variant="standard">
-      {
-        isControlled ? (
-          <TextField
+      {isControlled ? (
+        <TextField
+          id={id}
+          label={label}
+          placeholder={placeholder}
+          onChange={onChange}
+          autoComplete={autoComplete}
+          autoFocus={autoFocus}
+          defaultValue={defaultValue}
+          disabled={disabled}
+          color={color}
+          type={type}
+          value={value}
+          variant={variant}
+          name={name}
+          required={required}
+          rows={rows}
+          maxRows={maxRows}
+          minRows={minRows}
+          multiline={multiLine}
+          InputProps={inputProps}
+          helperText={helperText}
+        />
+      ) : (
+        <TextField
+          {...(registeredEvents || {})}
+          // placeholder={placeholder}
+          // disabled={disabled}
+          // autoComplete={autoComplete}
+          // autoFocus={autoFocus}
+          // type={accept}
+          // multiline={multiLine}
+          // id={id}
+          // rows={rows}
+          // maxRows={maxRows}
+          // minRows={minRows}
+          // // onClick={onChange}
+          // onChange={onChange}
           id={id}
           label={label}
           placeholder={placeholder}
@@ -66,20 +112,19 @@ const CustomInput: React.FC<CustomInputProps> = ({
           name={name}
           required={required}
           InputProps={inputProps}
+          rows={rows}
+          maxRows={maxRows}
+          minRows={minRows}
+          multiline={multiLine}
+          error={error}
+          helperText={helperText}
         />
-        ):(
-          <TextField
-          {...(registeredEvents || {})}
-            placeholder={placeholder}
-            disabled={disabled}
-            type={accept}
-            autoFocus={autoFocus}
-            id={id}
-            // onClick={onChange}
-            onChange={onChange}
-        />
-        )
-      }
+      )}
+      {showError && error && (
+        <>
+          <span>{error}</span>
+        </>
+      )}
     </FormControl>
   );
 };

@@ -91,6 +91,8 @@ export type selectDropdown = {
   closeMenuOnSelect?: boolean;
   isRequired?: boolean;
   inputRef?: any;
+  value?: any;
+  hideSelectedOptions?:boolean;
 };
 
 //  type ModalButton ={
@@ -136,6 +138,7 @@ export type CustomButtonProps = {
   withStartSvg?: any;
   withEndSvg?: any;
   customClasssName?: any;
+  sx?:any;
   color?:
     | 'inherit'
     | 'primary'

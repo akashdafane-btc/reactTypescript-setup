@@ -21,6 +21,8 @@ const AnimatedMulti: React.FC<selectDropdown> = ({
   closeMenuOnSelect,
   isRequired,
   inputRef,
+  value,
+  hideSelectedOptions,
 }) => {
   return (
     <div className="form-group">
@@ -46,6 +48,8 @@ const AnimatedMulti: React.FC<selectDropdown> = ({
           isSearchable
           isClearable
           placeholder={placeholder}
+          value={value}
+          hideSelectedOptions={hideSelectedOptions}
         />
       </div>
       {error && <div className="error-text">{error}</div>}

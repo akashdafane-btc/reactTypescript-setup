@@ -27,8 +27,16 @@ const ModalDashboard = () => {
   ]
   return (
     <>
-    <Modal buttons={modalFooterButtons} title='Header Title' >
+    {/* this is popUp modal */}
+
+    {/* <Modal buttons={modalFooterButtons} title='Header Title' >
       <h1>This is custom modal</h1>
+    </Modal> */}
+
+
+{/* this is Normal modal */}
+    <Modal title='Sunraise'>
+      <h1>This is Dummy modal</h1>
     </Modal>
     </>
   )

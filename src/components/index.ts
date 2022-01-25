@@ -12,6 +12,8 @@ import Toaster from './common/toaster';
 import ToolTip from './common/tooltip';
 import Tabs from './common/tabs';
 import Files from './common/fileUpload';
+import Stepper from './common/stepper';
+import CheckboxDropdown from './common/checkboxDropdown';
 
 export {
   Button,
@@ -28,4 +30,6 @@ export {
   ToolTip,
   Tabs,
   Files,
+  Stepper,
+  CheckboxDropdown,
 };
