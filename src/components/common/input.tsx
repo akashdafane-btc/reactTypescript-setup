@@ -1,35 +1,9 @@
 import React from 'react';
 import FormControl from '@mui/material/FormControl';
 import { TextField } from '@mui/material';
-import Input from '@mui/material/Input';
-// import { CustomInputProps } from '../../interfaces/types';
+import { CustomInputProps } from '../../interfaces/types';
 
-export type CustomInputProps = {
-  label?: string;
-  placeholder?: string;
-  id?: string;
-  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
-  autoComplete?: string;
-  autoFocus?: boolean;
-  color?: 'primary' | 'secondary' | 'error' | 'info' | 'success' | 'warning';
-  defaultValue?: any;
-  disabled?: boolean;
-  type?: string;
-  value?: any;
-  variant?: 'filled' | 'outlined' | 'standard';
-  name?: string;
-  required?: boolean;
-  inputProps?: object;
-  isControlled?: boolean;
-  registeredEvents?: any;
-  multiLine?: boolean;
-  rows?: number | string;
-  maxRows?: number | string;
-  minRows?: number | string;
-  error?: any;
-  showError?: boolean;
-  helperText?: React.ReactNode;
-};
+
 
 const CustomInput: React.FC<CustomInputProps> = ({
   label,
@@ -85,18 +59,6 @@ const CustomInput: React.FC<CustomInputProps> = ({
       ) : (
         <TextField
           {...(registeredEvents || {})}
-          // placeholder={placeholder}
-          // disabled={disabled}
-          // autoComplete={autoComplete}
-          // autoFocus={autoFocus}
-          // type={accept}
-          // multiline={multiLine}
-          // id={id}
-          // rows={rows}
-          // maxRows={maxRows}
-          // minRows={minRows}
-          // // onClick={onChange}
-          // onChange={onChange}
           id={id}
           label={label}
           placeholder={placeholder}

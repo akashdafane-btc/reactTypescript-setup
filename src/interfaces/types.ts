@@ -205,6 +205,14 @@ export type CustomInputProps = {
   required?: boolean;
   inputProps?: object;
   isControlled?: boolean;
+  registeredEvents?: any;
+  multiLine?: boolean;
+  rows?: number | string;
+  maxRows?: number | string;
+  minRows?: number | string;
+  error?: any;
+  showError?: boolean;
+  helperText?: React.ReactNode;
 };
 
 export type CustomLoaderProps = {

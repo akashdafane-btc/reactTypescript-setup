@@ -37,7 +37,6 @@ const FormsDashboard = () => {
 
   const onSubmit = (data: any) => {
     const { email, password } = data;
-    console.log('data', data);
   };
 
   return (

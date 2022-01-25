@@ -5,8 +5,6 @@ import { options } from '../constants/constant';
 const CheckboxDropdownMenu = () => {
   const [selectOption, setSelectOption] = useState<string>();
 
-  console.log('selectOption', selectOption);
-
   const handleChange = (selected: any) => {
     setSelectOption(selected);
   };
