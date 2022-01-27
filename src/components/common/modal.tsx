@@ -77,9 +77,10 @@ const CustomModal: React.FC<CustomModalProps> = ({
         </DialogContent>
         <DialogActions>
           {buttons &&
-            buttons.map((btn: any) => {
+            buttons.map((btn: any, index: any) => {
               return (
                 <Button
+                key={index}
                   disabled={btn.isDisabled}
                   isLoading={btn.isLoading}
                   label={btn.label}

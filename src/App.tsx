@@ -12,7 +12,7 @@ import {
   Toaster,
   ToolTip,
   Tabs,
-  Files,
+  // Files,
   Stepper,
 } from './components/index';
 import InputAdornment from '@mui/material/InputAdornment';
@@ -157,9 +157,9 @@ function App() {
       {/* <Button label="testing" variant="contained" /> */}
 
       <br></br>
-      {/* <FormsDashboard /> */}
+      <FormsDashboard />
 
-      {/* <RadioButtons /> */}
+   
 
 
 

@@ -1,10 +1,12 @@
 import React from 'react';
 import { IconButton, InputAdornment } from '@mui/material';
 import { useForm } from 'react-hook-form';
-import { Input, Button } from '../components/index';
+import { Input, Button,RadioButton } from '../components/index';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { yupResolver } from '@hookform/resolvers/yup';
 import schema from '../schema/login';
+
+
 
 const FormsDashboard = () => {
   const {
@@ -20,8 +22,14 @@ const FormsDashboard = () => {
       email: '',
       password: '',
     },
-    resolver: yupResolver(schema),
+    // resolver: yupResolver(schema),
   });
+
+  const radioButtonData = [
+    { label: 'male', value: 'male' },
+    { label: 'female', value: 'female' },
+    { label: 'other', value: 'other' },
+  ];
 
   const handleIcon = (position: 'end' | 'start') => {
     return (
@@ -36,6 +44,7 @@ const FormsDashboard = () => {
   };
 
   const onSubmit = (data: any) => {
+    console.log('444',data);
     const { email, password } = data;
   };
 
@@ -66,6 +75,7 @@ const FormsDashboard = () => {
           inputProps={{ endAdornment: handleIcon('end') }}
           required
         />
+        <RadioButton data={radioButtonData} label='gender'  />
         <Button type="button" label="submit" onClick={handleSubmit(onSubmit)} />
       </form>
     </>
